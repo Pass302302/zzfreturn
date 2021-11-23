@@ -36,14 +36,18 @@
 <body ontouchstart onload="getTime()">
     <div id="bodyDiv">
         <p onclick="changeUI()" id="myColorUI" style="text-align:center;background:green;"><br><img src="./images/pass1.png" width="330px" height="225px" alt=""><br>
-            <font style="font-size:100px">
+<font style="font-size:80px" id="timea">
                 <script type="text/javascript">
-                    var t = new Date();
-                    var hour = t.getHours();
-                    var minute = t.getMinutes();
-                    var second = t.getSeconds();
-                    var nowTime = hour + ((minute < 10) ? ":0" : ":") + minute + ((second < 10) ? ":0" : ":") + second;
-                    document.write(nowTime);
+                    function getTime(){
+						var t = new Date();
+						var hour = t.getHours();
+						var minute = t.getMinutes();
+						var second = t.getSeconds();
+						var nowTime = hour + ((minute < 10) ? ":0" : ":") + minute + ((second < 10) ? ":0" : ":") + second;
+						var showtime = document.getElementById("timea");
+						showtime.innerHTML=nowTime;
+					}
+					setInterval("getTime()",1);
                 </script>
             </font>
         </p>
